@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Anvil Connect by christiansmith</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Anvil Connect</h1>
+        <p>Anvil OpenID Connect Provider</p>
+
+        <p class="view"><a href="https://github.com/christiansmith/anvil-connect">View the Project on GitHub <small>christiansmith/anvil-connect</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/christiansmith/anvil-connect/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/christiansmith/anvil-connect/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/christiansmith/anvil-connect">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="anvil-connect" class="anchor" href="#anvil-connect"><span class="octicon octicon-link"></span></a>Anvil Connect</h1>
+
+<p><strong>Anvil Connect</strong> aims to be a scalable, full-featured, ready-to-run
+<a href="http://openid.net/connect/"><strong>OpenID Connect</strong></a> + <a href="http://tools.ietf.org/html/rfc6749"><strong>OAuth 2.0</strong></a> <strong>Provider</strong>.</p>
+
+<h3>
+<a name="why-run-your-own-openid-connect-povider" class="anchor" href="#why-run-your-own-openid-connect-povider"><span class="octicon octicon-link"></span></a>Why run your own OpenID Connect Povider?</h3>
+
+<ul>
+<li>Protect your apps and APIs with a shared identity and authorization service <em>that you control</em>
+</li>
+<li>Provide your users with a seamless authentication experience across several apps, as well as social signin via other providers like Google+</li>
+<li>Authorize third party access to your APIs on a user's behalf</li>
+<li>Be the bedrock of an ecosystem as an identity provider for other developers</li>
+</ul><h3>
+<a name="why-use-anvil-connect" class="anchor" href="#why-use-anvil-connect"><span class="octicon octicon-link"></span></a>Why use <strong>Anvil Connect</strong>?</h3>
+
+<p>We're building Anvil Connect for small teams like us that want to build fast, grow exponentially and need Identity and Access Management to be a solved problem.</p>
+
+<ul>
+<li>Deploy to the cloud in minutes</li>
+<li>Quickly connect your apps and APIs</li>
+<li>It's free and open source</li>
+</ul><h3>
+<a name="lightning-fast-setup" class="anchor" href="#lightning-fast-setup"><span class="octicon octicon-link"></span></a>Lightning fast setup</h3>
+
+<div class="highlight highlight-bash"><pre><span class="c"># Install the CLI</span>
+<span class="nv">$ </span>npm install -g anvil-connect
+
+<span class="c"># Make a place for your deployment repository to live</span>
+<span class="nv">$ </span>mkdir path/to/project
+<span class="nv">$ </span><span class="nb">cd </span>path/to/project
+
+<span class="c"># Generate a deployment repository</span>
+<span class="nv">$ </span>nv init deployment
+
+<span class="c"># Install dependencies</span>
+<span class="nv">$ </span>npm install
+
+<span class="c"># Initialize the local database</span>
+<span class="nv">$ </span>nv migrate
+
+<span class="c"># Create the first user account</span>
+<span class="nv">$ </span>nv signup
+
+<span class="c"># Assign a role</span>
+<span class="nv">$ </span>nv assign &lt;email&gt; authority
+
+<span class="c"># Start the server in development mode</span>
+<span class="nv">$ </span>nv serve
+</pre></div>
+
+<p>You should now have an OpenID Connect Provider running in development mode.</p>
+
+<h3>
+<a name="even-faster-deployment" class="anchor" href="#even-faster-deployment"><span class="octicon octicon-link"></span></a>Even faster deployment</h3>
+
+<p>If you're using Modulus.io, deployment is a snap. Create a new project and edit the <code>issuer</code> in <code>config.production.json</code> to reflect your app's url. Be sure to configure Redis as well. Then set these environment variables in the project administration section:</p>
+
+<ul>
+<li><code>ANVIL_CONNECT_PRIVATE_KEY</code></li>
+<li><code>ANVIL_CONNECT_PUBLIC_KEY</code></li>
+</ul><p>You can copy these values from the <code>.pem</code> files using <code>$ nv copy keys/&lt;private|public&gt;.pem</code>. Be sure to use this command to copy the keys as it will encode the values as expected by Anvil Connect.</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>modulus deploy
+</pre></div>
+
+<p>Support for other deployment targets is in the works.</p>
+
+<h3>
+<a name="configure-and-customize" class="anchor" href="#configure-and-customize"><span class="octicon octicon-link"></span></a>Configure and customize</h3>
+
+<ul>
+<li><a href="https://github.com/christiansmith/anvil-connect/wiki/Documentation">Documentation</a></li>
+<li><a href="https://github.com/christiansmith/anvil-connect/wiki/References">References</a></li>
+</ul><h2>
+<a name="mit-license" class="anchor" href="#mit-license"><span class="octicon octicon-link"></span></a>MIT License</h2>
+
+<p>Copyright (c) 2014 Christian Smith <a href="http://anvil.io">http://anvil.io</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/christiansmith">christiansmith</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
